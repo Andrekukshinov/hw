@@ -1,0 +1,10 @@
+
+.activePage {
+    border: ridge;
+    border-radius: 7px;
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgba(63, 8, 115, 0.2);
+}

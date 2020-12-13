@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/styleForLab6.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 5</title>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../../commonStyles.css">
+    <script src="../js/jqw.js"></script>
+    <style type="text/css">
+        #wrap1 {
+            border-style: solid;
+            border-width: 1px;
+            width: 350px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 1</a>
+    </button>
+    <div style="width: 23%"></div>
+
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 2
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <div class="activePage">
+                <li class="dropdown-item activePage"><a href="#">Task 5</a></li>
+            </div>
+        </ul>
+    </div>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        let innerDiv = $("div div");
+        let meadow = $("#meadow");
+        let rainbow = $(".rainbow");
+        let future = $("#fut #future");
+        let set = $("[set]");
+        let last = $("[last='code']");
+        innerDiv.css("color", "red");
+        let ar = [];
+        ar.push(meadow, rainbow, set, last, future);
+        ar.forEach(x => x.css("color", "orange").css("font-size", "30px"));
+
+    });
+</script>
+<div id="wrap1">
+    В тпд*кцлГ/ Щ34мть в-л
+    <div style="display:inline">К</div>
+    ову ку_у жззщш бтуш+щцтвл фстямц цзойц<span id="none">Ь</span>шев уывлц-дйжыщч в<span id="meadow">а</span>оПтмтущйзМчста
+    вилуц ушЗс/тхй хфыО<span id="protect">ж</span>ыуе яыв<span class="rainbow">з</span>роц вварцжцду ул<span
+        id="test">к</span>шу тфвфлдоцу уещкоу+ш лсоа
+    <div id="fut">влм.цщу<span id="future">а</span>мтвлОЛдву влуйд</div>
+    цу ушо всбр.фвцу щц<span id="sec">у</span>ш осл/влоцюбь лц<span set id="bear">н</span>дуо юсфыд.лоцу рвла ушусть
+    фываждлц гщушс сть.ущш тсьЦцовл сбфвы вос+длов цуз<span id="beck" last="code">ь</span>йхВяс с. вцуш стьяьбв цудкощ з<span
+        id="beck" last="none">в</span>о жыоыфв цщфзф язвсояловы выосяьт сь юяузо ыться хшуццяж воалфыао фждво цзущкш
+    сялджо
+</div>
+</body>
+</html>

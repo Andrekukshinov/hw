@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet"
+          type="text/css"/>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<!--        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 1</title>
+    <link rel="stylesheet" href="../../commonStyles.css">
+    <style type="text/css">
+        #code {
+            background-color: #fffDBD;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+    <style type="text/css">
+        #el1, #el2, #el3 {
+            border-style: solid;
+            border-width: 1px;
+            height: 180px;
+            width: 200px;
+        }
+
+        #head {
+            text-align: center;
+            color: white;
+            border-style: solid;
+            border-color: #049797;
+            background-color: #049797;
+        }
+
+        #cont {
+            padding: 8px;
+        }
+
+        #el2 {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+        }
+
+        #el3 {
+            position: absolute;
+            top: 0px;
+            left: 260px;
+        }
+
+        #drop1 {
+            border: 1px solid;
+            position: absolute;
+            top: 270px;
+            left: 0px;
+            height: 180px;
+            width: 200px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        #drop2 {
+            border: 1px solid;
+            position: absolute;
+            top: 270px;
+            left: 260px;
+            height: 180px;
+            width: 200px;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        #sort1 {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            width: 40%;
+        }
+
+        #sort1 li {
+            margin: 2px;
+            padding: 0.4em;
+            border-style: solid;
+            border-width: 1px;
+            height: 18px;
+        }
+
+        #wrap1 {
+            position: relative;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            let $el1 = $("#el1");
+            let $el2 = $("#el2");
+            let $el3 = $("#el3");
+            let drop1 = $("#drop1");
+            let drop2 = $("#drop2");
+            console.log($el1);
+            $el1.resizable();
+            $el1.draggable();
+            let $ul = $("#sort1");
+            $ul.sortable();
+            // $ul.disableSelection()();
+            $el2.draggable();
+            $el3.draggable();
+
+            drop1.droppable({
+                accept: "#el2, #el3",
+                drop: (e, ui) => {
+                    ui.draggable.css("display", "none");
+                    drop1.css("background-color", "green");
+                }
+            });
+            drop2.droppable({
+                accept: "#el3",
+                drop: (e, ui) => {
+                    ui.draggable.css("display", "none");
+                    drop2.css("background-color", "green");
+                }
+            });
+
+
+            /* Пишите код здесь */
+
+        });
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 1
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <div class="activePage"><li class="dropdown-item activePage"><a href="#">Task 3</a></li></div>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+            <li class="dropdown-item"><a href="task6.html">Task 6</a></li>
+            <li class="dropdown-item"><a href="task7.html">Task 7</a></li>
+            <li class="dropdown-item"><a href="task8.html">Task 8</a></li>
+            <li class="dropdown-item"><a href="task9.html">Task 9</a></li>
+        </ul>
+    </div>
+    <div style="width: 23%"></div>
+    <button disabled type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 2</a>
+    </button>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+
+
+
+<p><b>1. Сделайте элемент с id=el1 перетаскиваемым и растягиваемым.</b></p>
+<div style="min-height:230px">
+    <div id="el1" class="ui-corner-all">
+        <div id="head">
+            Окно <b>el1</b>
+        </div>
+        <p id="cont">Данное окно можно перетаскивать и растягивать.</p>
+    </div>
+</div>
+<hr/>
+<p><b>2. Сделайте список с id=sort1 сортируемым и затем расставьте элементы этого списка в правильном порядке.</b></p>
+<ul id="sort1">
+    <li>Второй пункт списка</li>
+    <li>Третий пункт списка</li>
+    <li>Первый пункт списка</li>
+    <li>Пятый пункт списка</li>
+    <li>Четвертый пункт списка</li>
+    <li>Седьмой пункт списка</li>
+    <li>Шестой пункт списка</li>
+</ul>
+<hr/>
+<p><b>3. Сделайте элементы с id=el2 и id=el3 перетаскиваемыми. После этого сделайте так, чтобы первая область (c
+    id=drop1) принимала оба элемента, а вторая (c id=drop2) только элемент с id=el3. После того, как элемент будет
+    перетащен в принимающую его область перетаскиваемый элемент должен стать невидимым, а цвет фона области должен
+    измениться на зеленый.</b></p>
+<div id="wrap1">
+    <div id="el2" class="ui-corner-all">
+        <div id="head">
+            Окно <b>el2</b>
+        </div>
+        <p id="cont">Данное окно можно перетаскивать мышкой.</p>
+    </div>
+    <div id="el3" class="ui-corner-all">
+        <div id="head">
+            Окно <b>el3</b>
+        </div>
+        <p id="cont">Данное окно можно перетаскивать мышкой.</p>
+    </div>
+    <div id="drop1"> Область 1</div>
+    <div id="drop2">Область 2</div>
+</div>
+</body>
+</html>

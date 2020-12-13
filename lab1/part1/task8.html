@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/styleForLab6.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 8</title>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../../commonStyles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 1
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+            <li class="dropdown-item"><a href="task6.html">Task 6</a></li>
+            <li class="dropdown-item"><a href="task7.html">Task 7</a></li>
+            <div class="activePage">
+                <li class="dropdown-item activePage"><a href="#">Task 8</a></li>
+            </div>
+            <li class="dropdown-item"><a href="task9.html">Task 9</a></li>
+            <li class="dropdown-item"><a href="task10.html">Task 10</a></li>
+        </ul>
+    </div>
+    <div style="width: 23%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 2</a>
+    </button>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+<button onclick="writer()">exe</button>
+<script>
+    function line(width) {
+        let hr = document.createElement("hr");
+        hr.setAttribute("width", width);
+        hr.setAttribute("align", "center");
+        document.body.append(hr);
+    }
+    function writer() {
+        for (let runner = 10; runner < 101; runner += 10) {
+            line(runner);
+        }
+    }
+</script>
+</body>
+</html>

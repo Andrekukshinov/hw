@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/styleForLab6.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 9</title>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../../commonStyles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 1
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+            <li class="dropdown-item"><a href="task6.html">Task 6</a></li>
+            <li class="dropdown-item"><a href="task7.html">Task 7</a></li>
+            <li class="dropdown-item"><a href="task8.html">Task 8</a></li>
+            <div class="activePage">
+                <li class="dropdown-item activePage"><a href="#">Task 9</a></li>
+            </div>
+            <li class="dropdown-item"><a href="task10.html">Task 10</a></li>
+        </ul>
+    </div>
+    <div style="width: 23%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 2</a>
+    </button>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+<button onclick="">exe</button>
+<script>
+
+    var rows;
+    var cols;
+
+    function table(rows, cols) {
+        document.write('<table border="1">');
+        for (let i = 0; i < rows; i++) {
+            document.write('<tr>');
+            if (i === 0) {
+                document.write('<th>' + 'Power' + '</th>' + '<th>' + 'Result' + '</th>');
+            }
+            else {
+                    document.write('<td>' + '2<sup>'+(i-1)+'</sup>' + '</td>'+ '<td>' + Math.pow(2, i-1) + '</td>');
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+    }
+    (table(7, 2));
+</script>
+</body>
+</html>

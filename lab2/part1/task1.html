@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 1</title>
+    <link rel="stylesheet" href="../../commonStyles.css">
+    <link rel="stylesheet" href="../stls/styles.css">
+    <script defer src="../js/main.js"></script>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#pmtog").css({"color": "green"});
+            $("p[class = pr1]").css({"color": "red"});
+            $("input[value = 'Покрасьте меня в оранжевый']").css({"background-color": "orange"});
+            for (let i = 1; i < 4; ++i) {
+                $("p[class = pmb" + i + "]").css({"color": "blue"});
+            }
+            $("div[id = wrap1]").find(("p.pmtobr")).css("color", "brown");
+            $("img[src='../imgs/pic_bulbonoff3.png']").css("borderStyle", "solid");
+            let div = $("div[id = iwrap]");
+            div.find("input[type = button]").css({"background-color":"red"})
+            div.find("input[type = submit]").css({"background-color":"red"})
+//
+//Пишите код здесь
+
+        });
+    </script>
+</head>
+<body onload="classList1()">
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 1
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <div class="activePage">
+                <li class="dropdown-item activePage"><a href="#">Task 1</a></li>
+            </div>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+        </ul>
+    </div>
+    <div style="width: 23%"></div>
+
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+<p><b>Каждое задание отмеченное цифрой должно быть выполнено с помощью одной jQuery команды.</b></p>
+<hr/>
+<p><b>1.</b></p>
+<p id="pmtog">Покрасьте меня в зеленый цвет.</p>
+<p><b>2.</b></p>
+<h3 class="pr1">Мой цвет не должен быть изменен.</h3>
+<p class="pr1">Покрасьте меня в красный цвет.</p>
+<p><b>3.</b></p>
+<input type="button" value="Покрасьте меня в оранжевый"/>
+<br/><br/>
+<input type="text" value="Мой цвет не должен быть изменен"/>
+<br/><br/>
+<input type="submit" value="Мой цвет изменять не нужно"/>
+<br/><br/>
+<p><b>4.</b></p>
+<p class="pmb1">Покрасьте меня в синий.</p>
+<p>Мой цвет не должен быть изменен.</p>
+<p>Мой цвет не должен быть изменен.</p>
+<p class="pmb2">Покрасьте меня в синий.</p>
+<p>Мой цвет не должен быть изменен.</p>
+<p class="pmb3">Покрасьте меня в синий.</p>
+<p><b>5.</b></p>
+<div id="wrap1">
+    <p>Мой цвет не должен быть изменен.</p>
+    <p class="pmtobr">Покрасьте меня в коричневый.</p>
+</div>
+<p class="pmtobr">Мой цвет не должен быть изменен.</p>
+<p><b>6. Отобразите рамку вокруг третьего (слева) изображения. (Используйте команду css("borderStyle","solid")</b></p>
+<img src="../imgs/pic_bulbonoff1.png" style="width:200px;">
+<img src="../imgs/pic_bulbonoff2.png" style="width:200px;">
+<img src="../imgs/pic_bulbonoff3.png" style="width:200px;">
+<p><b>7. </b></p>
+<div id="iwrap">
+    <input type="button" value="Покрасьте меня в красный"/>
+    <br/><br/>
+    <input type="text" value="Мой цвет не должен быть изменен"/>
+    <br/><br/>
+    <input type="submit" value="Покрасьте меня в красный"/>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 2</title>
+    <link rel="stylesheet" href="../../commonStyles.css">
+    <script defer src="../js/main.js"></script>
+
+    <style type="text/css">
+        #code {
+            background-color: #fffDBD;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(() => {
+            let but1 = $("input[id = but1]");
+            let par1 = $("p[id = par1]");
+            console.log(par1);
+            but1.bind({
+                click: () => {
+                    par1.css({"color": "green", "font-size": "20px"});
+                },
+                dblclick: () => {
+                    par1.css({"color": "black", "font-size": "default"});
+                }
+            });
+            let a = $("a[id=href1]");
+            a.bind({
+                mouseover: () => {
+                    a.css("color", "orange");
+                },
+                mouseleave: () => {
+                    a.css("color", "blue");
+                }
+            })
+            let text1 = $("#text1");
+            text1.bind({
+                select: () => {
+                    text1.css({
+                        "color": "red",
+                        "font-size": "20px"
+                    })
+                }
+            });
+            console.log(but1);
+            let clickCounter = 0;
+//            <p id="par2">Мое оформление будет меняться после каждого нажатия на кнопку ниже.</p>
+//             <input id="but2" type="button" value="Изменить оформление абзаца"/>
+            let but2 = $("#but2");
+            but2.bind({
+                click: () => {
+                    let par2 = $("#par2");
+                    clickCounter++;
+                    if (clickCounter === 1) {
+                        par2.css({
+                            "font-family": "Times New Roman",
+                            "color": "red",
+                            "border": "none"
+                        });
+                    }
+                    if (clickCounter === 2) {
+                        par2.css({
+                            "font-family": "Arial",
+                            "color": "blue"
+                        });
+                    }
+                    if (clickCounter === 3) {
+                        par2.css({
+                            "font-family": "Verdana",
+                            "font-weight": "bold",
+                            "border": "1px solid black"
+                        });
+                        clickCounter = 0;
+                    }
+                }
+            })
+//Пишите код здесь
+
+        });
+    </script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 1
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <div class="activePage">
+                <li class="dropdown-item activePage"><a href="#">Task 2</a></li>
+            </div>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+        </ul>
+    </div>
+    <div style="width: 23%"></div>
+
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+<p><b>1. После одинарного нажатия на кнопку с id="but1" цвет текста абзаца с id="par1" должен измениться на зеленый, а
+    размер его шрифта должен стать равным 20px. При двойном нажатии на кнопку с id="but1" оформление абзаца с id="par1"
+    должно сбрасываться на стандартное.</b></p>
+<div id="code">
+    <h3 id="par1">Я первый заголовок на странице.</h3>
+    <p id="par1">Я первый абзац на странице.</p>
+    <input id="but1" type="button" value="Нажмите на меня"/>
+</div>
+<p><b>2. При наведении указателя мыши на ссылку c id="href1" ее цвет должен измениться на оранжевый. При выведении
+    указателя мыши за ее пределы оформление должно сбросится на стандартное.</b></p>
+<div id="code">
+    <a id="href1" href="http://www.google.ru/">www.google.ru</a>
+</div>
+<p><b>3. При выделении текста элемента с id="text1" его цвет должен измениться на красный, а размер шрифта должен стать
+    равным 20px.</b></p>
+<div id="code">
+    <input type="text" id="text1" value="Выделите мой текст"/>
+</div>
+<p><b>4. При каждом щелчке по кнопке с id=but2 оформление абзаца с id=par2 должно меняться следующим образом:</b></p>
+<ul>
+    <li>Текст должен быть отображен шрифтом Times New Roman красного цвета;</li>
+    <li>Текст должен быть отображен шрифтом Arial синего цвета;</li>
+    <li>Текст должен быть отображен жирным шрифтом Verdana, с рамкой толщиной 1 пиксель (<i>используйте свойство
+        font-weight:bold для того, чтобы сделать текст
+        жирным и свойство border-style для задания толщины границы</i>)
+    </li>
+</ul>
+<div id="code">
+    <p id="par2">Мое оформление будет меняться после каждого нажатия на кнопку ниже.</p>
+    <input id="but2" type="button" value="Изменить оформление абзаца"/>
+</div>
+</body>
+</html>

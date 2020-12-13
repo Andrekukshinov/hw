@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../styles/styleForLab6.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 2</title>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../../commonStyles.css">
+    <script src="../js/jqw.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 1
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <div class="activePage">
+                <li class="dropdown-item activePage"><a href="#">Task 3</a></li>
+            </div>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+            <li class="dropdown-item"><a href="task6.html">Task 6</a></li>
+            <li class="dropdown-item"><a href="task7.html">Task 7</a></li>
+            <li class="dropdown-item"><a href="task8.html">Task 8</a></li>
+            <li class="dropdown-item"><a href="task9.html">Task 9</a></li>
+            <li class="dropdown-item"><a href="task10.html">Task 10</a></li>
+        </ul>
+    </div>
+    <div style="width: 23%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 2</a>
+    </button>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+
+</nav>
+<p>1.Раскодируйте значение строки и выведите ее на страницу: </p>
+<hr/>
+<p>(1052)(1086)(1089)(1082)(1074)(1072)</p>
+<hr/>
+<p>2.После того как строка будет раскодирована закодируйте ее обратно и сравните свой результат с данными задачи. </p>
+<p><b>Подсказка:</b> используйте методы <b>fromCharCode()</b> и <b>charCodeAt()</b>.</p>
+<button onclick="find()">exe</button>
+<script type='text/javascript'>
+    function find() {
+        let elements = $('hr').next().html();
+        let containerAr = [];
+        let varContainer = "";
+        let finalString = "";
+        for (let runner = 0; runner < elements.length; ++runner) {
+
+            if (!isNaN(parseInt(elements.charAt(runner)))) {
+                // console.log(elements.charAt(runner));
+                varContainer += elements.charAt(runner);
+            }
+            else if(elements.charAt(runner)!=='(') {
+                console.log(varContainer);
+                containerAr.push(varContainer);
+                varContainer = null;
+                varContainer = String();
+            }
+        }
+        containerAr.forEach(stringNumber => {
+            let char = String.fromCharCode(parseInt(stringNumber));
+            finalString += char;
+        });
+        let br = document.createElement('br');
+        let hr = document.createElement('hr');
+        document.body.append(br);
+        document.body.append(hr);
+        document.body.append(finalString);
+        let finalNumbers = [];
+        console.log(finalString+"\n\n\n\n\n\n\n");
+        for (let runner = 0; runner < finalString.length; runner++) {
+            finalNumbers.push(finalString.charCodeAt(runner));
+        }
+        console.log(finalNumbers);
+        document.body.append(br);
+        document.body.append(finalNumbers);
+    }
+
+    let l = "fkf";
+    String.fromCharCode()//Пишите Ваш код здесь
+
+</script>
+
+</body>
+</html>

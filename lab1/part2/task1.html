@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/styleForLab6.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 1</title>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../../commonStyles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 1</a>
+    </button>
+
+    <div style="width: 23%"></div>
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 2
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <div class="activePage"><li class="dropdown-item activePage"><a href="#">Task 1</a></li></div>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+        </ul>
+    </div>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+<p>С помощью регулярного выражения найдите в тексте ниже все слова, выделенные жирным шрифтом
+    (не используя поиск альтернатив).</p>
+<p><b>yandex.ru</b> example.com <b>www.yandex.ru</b> example.ru <b>yandex</b>
+    http://example.com <b>http://www.yandex.ru</b> <b>YANDEX.RU</b> </p>
+<script type='text/javascript'>
+    txt=' yandex.ru example.com www.yandex.ru example.ru yandex http://example.com http://www.yandex.ru wiisdomweb.ru YANDEX.RU ';
+    regex1= new RegExp("(\\s|^|[A-Za-z\.\\/\:]+)(yandex(\\.ru)*)(\\s|$)", "ig");
+    console.log('<b>'+txt.match(regex1)+'</b>');
+</script>
+</body>
+</html>

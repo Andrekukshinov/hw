@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 5</title>
+    <link rel="stylesheet" href="../../commonStyles.css">
+    <script type='text/javascript'>
+        function start() {
+            const xhttp = new XMLHttpRequest();
+            xhttp.open('GET', '../data/phonebase.json', true);
+            xhttp.send();
+            xhttp.onload = function () {
+                if (this.status === 200) {
+                    try{
+                        const result = JSON.parse(this.responseText);
+                        console.log(result[2]);
+                        let ul = document.createElement("ul");
+                        document.body.append(ul);
+                        for (let runner = 0; runner < 20; ++runner) {
+                            let li = document.createElement("li");
+                            li.innerHTML = result[runner].name;
+                            document.body.append(li);
+                        }
+                    } finally {
+                        console.log(result);
+                    }
+                    console.log(this.responseText);
+                } else {
+
+                }
+            }
+        }
+        /* Пишите код здесь */
+    </script>
+
+</head>
+<body>
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 1
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+            <li class="dropdown-item"><a href="task6.html">Task 6</a></li>
+            <li class="dropdown-item"><a href="task7.html">Task 7</a></li>
+            <li class="dropdown-item"><a href="task8.html">Task 8</a></li>
+            <div class="activePage"><li class="dropdown-item activePage"><a href="#">Task 9</a></li></div>
+        </ul>
+    </div>
+    <div style="width: 23%"></div>
+    <button disabled type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 2</a>
+    </button>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+<button onclick="start()">display</button>
+
+</body>
+</html>

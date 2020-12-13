@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        function jFindP() {
+            let body = $("body");
+            let p = body.$("p");
+            let button = body.$("button");
+            let p2 = body.$("#id2");
+            let p3 = body.$(".id3");
+            let hrefs = body.$("[href]");
+            let google = body.$("[href='google.com']");
+            hrefs.css("font-size", "40px");
+            p2.css("color", "green").css("font-weigh", "bold");
+
+            p3.css("font-weight", "bold").css("color", "red");
+            button.css("color", "blue");
+            google.css("color", "green");
+            p.css("font-size", "20px");
+        }
+
+    </script>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/styleForLab6.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 4</title>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../../commonStyles.css">
+    <script src="../js/jqw.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 1</a>
+    </button>
+    <div style="width: 23%"></div>
+
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 2
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <div class="activePage">
+                <li class="dropdown-item activePage"><a href="#">Task 4</a></li>
+            </div>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+        </ul>
+    </div>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+
+<button onclick="jFindP()">check</button>
+<p>Я первый элемент бещ айди</p>
+<p id="id2">Я первый элемент бещ айди</p>
+<p class="id3">Я первый элемент бещ айди</p>
+<button>button</button>
+<a href="google.com">google</a>
+<a href="https://www.w3schools.com/html/default.asp">html учебник</a>
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/styleForLab6.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 2</title>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../../commonStyles.css">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 1</a>
+    </button>
+    <div style="width: 23%"></div>
+
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 2
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <div class="activePage"><li class="dropdown-item activePage"><a href="#">Task 2</a></li></div>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+        </ul>
+    </div>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+
+<p>1. Создайте конструктор - <i>Automobile</i> создающий объекты со свойствами <i>color</i> (цвет),
+    <i>model</i> (модель), <i>year</i> (год выпуска), <i>manufact</i> (производитель) и методами: <i>whatColor</i>
+    (позволяющий узнать цвет автомобиля) и <i>autoInfo</i> (позволяющий узнать модель, год выпуска, и производителя
+    автомобиля). </p>
+<p>2. Создайте с помощью конструктора <i>Automobile</i> объекты перечисленные ниже и обратитесь к их методам
+    <i>whatColor</i> и <i>autoInfo</i>: <br/>
+    1. Nissan Skyline 2007 Красный;<br/> 2. Toyota Corolla 2009 Черный;<br/> 3. Volkswagen Golf 2009 Синий</p>
+<p>3. Создайте конструктор - <i>Driver</i> наследующий свойства и методы у конструктора <i>Automobile</i>.
+    Конструктор должен добавлять к функциональности свойство driver содержащее свойства <i>name</i> (имя хозяина
+    автомобиля) и <i>experience</i> (водительский стаж) и метод driverInfo (позволяющий узнать имя и стаж хозяина
+    автомобиля).</p>
+<p>4. Создайте с помощью конструктора <i>Driver</i> объект: Дмитрий 3 Ford Focus 2010 Белый. И обратитесь к его
+    методам whatColor, autoInfo и driverInfo.</p>
+<button onclick="getData()">get data</button>
+
+<script type='text/javascript'>
+    function Automobile(color, model, year, manufact) {
+        this.color = color;
+        this.model = model;
+        this.year = year;
+        this.manufact = manufact;
+
+        this.whatColor = function () {
+            return this.color;
+        }
+        this.autoInfo = function () {
+            return this.model + " " + this.year + " " + this.manufact;
+        }
+    }
+
+    function Driver(name, exp, color, model, year, manufact) {
+        Automobile.call(this);
+        this.name = name;
+        this.color = color;
+        this.model = model;
+        this.year = year;
+        this.manufact = manufact;
+
+        this.exp = exp;
+
+        this.driverInfo = function () {
+            return "name is " + this.name + " experience " + this.exp;
+        }
+    }
+
+    function getData() {
+        let drver = new Driver('Ilon', 10,'black','model5',2018,'tesla');
+        console.log(drver.whatColor());
+        console.log(drver.driverInfo());
+        console.log(drver.autoInfo());
+    }
+</script>
+
+</body>
+</html>

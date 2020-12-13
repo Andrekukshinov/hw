@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/styleForLab6.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 4</title>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../../commonStyles.css">
+    <script src="../js/jqw.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 1
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <div class="activePage">
+                <li class="dropdown-item activePage"><a href="#">Task 2</a></li>
+            </div>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+            <li class="dropdown-item"><a href="task6.html">Task 6</a></li>
+            <li class="dropdown-item"><a href="task7.html">Task 7</a></li>
+            <li class="dropdown-item"><a href="task8.html">Task 8</a></li>
+            <li class="dropdown-item"><a href="task9.html">Task 9</a></li>
+            <li class="dropdown-item"><a href="task10.html">Task 10</a></li>
+        </ul>
+    </div>
+    <div style="width: 23%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 2</a>
+    </button>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+<p>Найдите начальные позиции выделенных жирным слов и выведите результат на экран: </p>
+<hr/>
+<p><b>Алтайские горы</b> - представляют сложную систему самых высоких в <b>Сибири</b> хребтов, разделённых глубокими
+    долинами рек и обширными внутригорными и межгорными котловинами.
+    <br/>
+    Горная система расположена там, где сходятся границы России, Монголии, Китая и Казахстана. Она делится на <b>Южный
+        Алтай</b> (Юго-Западный), Юго-Восточный Алтай и Восточный Алтай, Центральный Алтай, Северный и Северо-Восточный
+    Алтай, Северо-Западный Алтай.
+    <br/>
+    Алтайский, Катунский заповедники и плоскогорье Укок в совокупности образуют объект Всемирного наследия <b>ЮНЕСКО</b>,
+    именуемый «<b>Алтай — Золотые горы</b>».
+    <br/>
+    <br/>
+    Текст взят с Wikipedia.org</p>
+<hr/>
+
+<p><b>Подсказка:</b> используйте метод <b>indexof()</b>.</p>
+<button onclick="f()">exe</button>
+<script type='text/javascript'>
+    function f() {
+        let str1 = $('hr').next().html();
+        let str = str1;
+        str = str.replaceAll("<br>", "");
+        str = str.replaceAll(",", " ,");
+        str = str.replaceAll(".", " .");
+        str = str.replaceAll("</b>", "");
+        str = str.replaceAll("<b>", " <b> ");
+        str = str.replaceAll(/\s+/g, ' ');
+        let wordsArray = str.split(" ");
+        wordsArray = wordsArray.filter(x => x !== '');
+        console.log(wordsArray);
+        let nextBold = -1;
+        let counter = 0;
+        let boldCounter = 0;
+        for (let runner = 0; runner < wordsArray.length; ++runner) {
+            runner = wordsArray.indexOf("<b>", nextBold);
+            nextBold = runner + 1;
+            if (nextBold === 0) {
+                counter++;
+                if (counter === 2)
+                    break;
+            } else {
+                document.body.append(document.createElement("hr"));
+                document.body.append(wordsArray[nextBold] + "'s index is " + (nextBold - boldCounter++));
+            }
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

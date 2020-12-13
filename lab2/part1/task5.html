@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 5</title>
+    <link rel="stylesheet" href="../../commonStyles.css">
+    <script defer src="../js/main.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            let but1 = $("input[id = but1]");
+            let par1 = $("p[id = par1]");
+            let par2 = $("p[id = par2]");
+            let par3 = $("p[id = par3]");
+            but1.bind({
+                click: () => {
+                    let colorPar1 = par1.css("color");
+                    let colorPar2 = par2.css("color");
+                    let colorPar3 = par3.css("color");
+                    alert("color for par1 is " + colorPar1 +
+                        "\n" + "color for par2 is " + colorPar2 +
+                        "\n" + "color for par3 is " + colorPar3);
+                }
+            });
+
+
+            let but2 = $("input[id = but2]");
+            let par4 = $("p[id = par4]");
+            let par5 = $("p[id = par5]");
+            let par6 = $("p[id = par6]");
+            let par7 = $("p[id = par7]");
+            but2.bind({
+                click: () => {
+                    par4.css("color", "red");
+                    par5.css("font-size", "25px");
+                    par6.css({"font-size": "33px", "font-family": "Veranda"});
+                    par7.css({
+                        "font-weight": "bolder",
+                        "font-family": "Times New Roman",
+                        "color": "red",
+                        "font-size": "27px"
+                    });
+
+                }
+            });
+
+//Пишите код здесь
+
+        });
+    </script>
+    <style type="text/css">
+        #code {
+            background-color: #fffDBD;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        #par1 {
+            color: #e40045;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        #par2 {
+            color: #3714B0;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        #par3 {
+            color: #FF5F00;
+            font-weight: bold;
+            font-size: 30px;
+        }
+    </style>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 1
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <div class="activePage"><li class="dropdown-item activePage"><a href="#">Task 5</a></li></div>
+            <li class="dropdown-item"><a href="../../lab3/part1/task2.html">Task 5</a></li>
+        </ul>
+    </div>
+    <div style="width: 23%"></div>
+
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+
+
+<p><b>1. После нажатия на кнопку с id=but1 должно отобразится всплывающее окно содержащее значения CSS свойств color
+    элементов с id=par1, id=par2 и id=par3.</b></p>
+<div id="code">
+    <p id="par1"> Я первый абзац.</p>
+    <p id="par2"> Я второй абзац.</p>
+    <p id="par3"> Я третий абзац.</p>
+    <p></p>
+    <input id="but1" type="button" value="Вывести цвет абзацев"/>
+</div>
+<p><b>2. После нажатия на кнопку с id=but2 элементы должны стать оформленными согласно их содержимому.</b></p>
+<div id="code">
+    <p id="par4">Текст этого элемента отображен красным шрифтом.</p>
+    <p id="par5">Текст этого элемента отображен шрифтом размером 25 пикселей.</p>
+    <p id="par6">Текст этого элемента отображен шрифтом Verdana размером 33 пикселя.</p>
+    <p id="par7">Текст этого элемента отображен жирным шрифтом Times New Roman красного цвета размером 27 пикселей.</p>
+    <input id="but2" type="button" value="Оформить элементы"/>
+</div>
+</body>
+</html>

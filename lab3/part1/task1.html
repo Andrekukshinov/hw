@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/styleForLab6.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 1</title>
+    <script src="../js/main.js"></script>
+    <link rel="stylesheet" href="../../commonStyles.css">
+
+
+    <style type="text/css">
+        #code
+        {
+            background-color:#fffDBD;
+            margin:10px;
+            padding:5px;
+        }
+    </style>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            let dataDisplayer = $("#par1");
+            let autBut = $("#but1");
+            let winBut = $("#but2");
+            let sprBut = $("#but3");
+            let sumBut = $("#but4");
+            autBut.bind({
+                click: () => {
+                    dataDisplayer.load("../data/autumn.txt");
+                }
+            });
+            winBut.bind({
+                click: () => {
+                    dataDisplayer.load("../data/winter.txt");
+                }
+            });
+            sprBut.bind({
+                click: () => {
+                    dataDisplayer.load("../data/summer.txt");
+                }
+            });
+            sumBut.bind({
+                click: () => {
+                    dataDisplayer.load("../data/spring.txt");
+                }
+            });
+
+//Пишите код здесь
+
+        });
+    </script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 1
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <div class="activePage"><li class="dropdown-item activePage"><a href="#">Task 1</a></li></div>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+            <li class="dropdown-item"><a href="task6.html">Task 6</a></li>
+            <li class="dropdown-item"><a href="task7.html">Task 7</a></li>
+            <li class="dropdown-item"><a href="task8.html">Task 8</a></li>
+            <li class="dropdown-item"><a href="task9.html">Task 9</a></li>
+        </ul>
+    </div>
+    <div style="width: 23%"></div>
+    <button disabled type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 2</a>
+    </button>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+
+
+<p><b>Создайте AJAX запросы, которые должны после нажатия на соответствующие кнопки обращаться к файлам autumn.txt, winter.txt, summer.txt, и spring.txt и затем отображать результат выполнения запроса в абзац с id=par1.</b></p>
+<div id="code">
+    <p id="par1">В данном абзаце будут отображены результаты запросов.</p>
+    <input id="but1" type="button" value="Обратится к файлу autumn.txt" />
+    <input id="but2" type="button" value="Обратится к файлу winter.txt" />
+    <br /><br />
+    <input id="but3" type="button" value="Обратится к файлу summer.txt" />
+    <input id="but4" type="button" value="Обратится к файлу spring.txt" />
+</div>
+</body>
+</html>
+

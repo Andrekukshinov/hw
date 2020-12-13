@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/styleForLab6.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Task 6</title>
+    <link rel="stylesheet" href="../../commonStyles.css">
+    <script src="../js/jqw.js"></script>
+    <script src="../js/main.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+    <div class="dropdown">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+            Part 1
+        </button>
+        <ul class="dropdown-menu letsCenter">
+            <li class="dropdown-item"><a href="task1.html">Task 1</a></li>
+            <li class="dropdown-item"><a href="task2.html">Task 2</a></li>
+            <li class="dropdown-item"><a href="task3.html">Task 3</a></li>
+            <li class="dropdown-item"><a href="task4.html">Task 4</a></li>
+            <li class="dropdown-item"><a href="task5.html">Task 5</a></li>
+            <div class="activePage"><li class="dropdown-item activePage"><a href="#">Task 6</a></li></div>
+            <li class="dropdown-item"><a href="task7.html">Task 7</a></li>
+            <li class="dropdown-item"><a href="task8.html">Task 8</a></li>
+            <li class="dropdown-item"><a href="task9.html">Task 9</a></li>
+            <li class="dropdown-item"><a href="task10.html">Task 10</a></li>
+        </ul>
+    </div>
+    <div style="width: 23%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../part2/task1.html">Part 2</a>
+    </button>
+
+    <div style="width: 53%"></div>
+    <button type="button" class="btn btn-primary"><a style="color: black" href="../../index.php">Back to contents</a>
+    </button>
+</nav>
+<p>Узнайте какое из трех округленных до ближайшего целого значений ниже минимально и выведите результат на экран: </p>
+<p>1. (48/3PI+308/4E)<sup>2</sup>-203sin(5)+(10PI-3E)<sup>3</sup>.</p>
+<p>2. (cos(20)-cos(3)+tan(5))<sup>0.5</sup>-203/sin(2).</p>
+<p>3. (22PI/22E-sin(3)*tan(4)-34)<sup>10</sup>.</p>
+<button onclick="f()">exe</button>
+<script type='text/javascript'>
+function f() {
+    let a = Math.pow(((48 / Math.PI) + (308 / (4 * Math.E))), 2) - (203 * Math.sin(5)) + (10 * Math.PI - (3 * Math.E));
+    // console.log(a);
+    let b = Math.pow(Math.cos(20) - Math.cos(3) + Math.tan(5), 0.5) - (203 / Math.sin(2));
+
+    let c = Math.pow((Math.PI * 22 / (Math.E * 22)) - (Math.sin(3) * (Math.tan(4) - 34)), 10);
+    // console.log(c);
+    console.log(Math.min(a, c));
+}
+</script>
+</body>
+</html>
